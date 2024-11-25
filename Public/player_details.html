@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tournaments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    function preview() {
+      prev.src=URL.createObjectURL(event.target.files[0]);
+   }
+
+   $(document).ready(function(){
+    $("#txtMail").val(localStorage.getItem("activeUser")).attr("readonly",true);
+   })
+ </script>
+  </head>
+  <body style="background-color: blanchedalmond;">
+   <br>
+<center>
+  <h3 ><b>Player's Detail</b></h3>
+</center>
+    <div class="container mt-5">
+    <form class="row g-3" method="post" enctype="multipart/form-data">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email Id</label>
+          <input type="email" class="form-control" id="txtMail" name="txtMail">
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <label for="inputGame" class="form-label">Name</label>
+                <input type="text" class="form-control" id="txtName" name="txtName">
+              </div>
+              <div class="col-4">
+                <label for="inputTitle" class="form-label">Games</label>
+                <input type="text" class="form-control" id="txtGame" name="txtGame" >
+              </div>
+              <div class="col-4">
+                <label for="inputFee" class="form-label">Mobile No.</label>
+                <input type="text" class="form-control" id="txtMob" name="txtMob">
+              </div>
+        </div>
+
+         <div class="row mt-3">
+            <div class="col-4">
+                <label for="inputDate" class="form-label">DOB</label>
+                <input type="date" class="form-control" id="txtDOB" name="txtDOB" >
+              </div>
+              <div class="col-4">
+                Gender
+              <select class="form-select" aria-label="Default select example" id="txtGender" name="txtGender">
+                <option selected value="none">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              </div>
+              
+              <!-- <div class="col-4">
+                <label for="inputLoc" class="form-label">Location</label>
+                <input type="text" class="form-control" id="txtLoc" name="txtLoc" >
+              </div> -->
+         </div>
+
+        <div class="row">
+        <div class="col-md-6">
+          <label for="inputPrize" class="form-label">Address</label>
+          <input type="text" class="form-control" id="txtAdd" name="txtAdd">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPrize" class="form-label">City</label>
+            <input type="text" class="form-control" id="txtCity" name="txtCity">
+          </div>
+        </div>
+
+        <div class="col-md-5">
+              Id Proof   <br>
+            <select name="optId" id="optId">
+              <option value="none" disabled selected>Select</option>
+              <option value="reg certificate">Reg. Certificate</option>
+              <option value="Aadhar card">Aadhar Card</option>
+            </select>
+        </div>
+
+        <div class="form-floating col-md-12">
+            Other Information <br>
+            <!-- <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea> -->
+            <input type="text" class="form-control" style="height: 100px;"  id="txtInfo" name="txtInfo" >
+            <!-- <label for="floatingTextarea2"></label> -->
+        </div>
+
+         <div class="row">
+        <div class="col-12 mt-1">
+          <center>
+            <button type="submit" class="btn btn-primary" id="sendbtn" formaction="/savePlayer-details">Send to Server</button>
+            <button type="submit" class="btn btn-primary" id="modifybtn" formaction="/modifyPlayer-details">Modify</button>
+
+          </center>
+        </div>
+        </div>
+
+      </form>
+   </div>
+</body>
+</html>
